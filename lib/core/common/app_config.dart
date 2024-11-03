@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:eraser/eraser.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:unique_identifier/unique_identifier.dart';
 
@@ -32,7 +33,7 @@ class AppConfig {
   late String _buildNumber;
   String? _appName;
   String? _appVersion;
-  ThemeMode _themeMode = ThemeMode.light;
+  ThemeMode _themeMode = ThemeMode.dark;
 
   BuildContext? get appContext => getIt<NavigationService>().appContext;
 
@@ -80,6 +81,19 @@ class AppConfig {
 
     /// Get Initital Theme Mode
     _themeMode = LocalStorage.getThemeMode;
+
+    /// Set status bar and navigation bar colors based on theme
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness:
+            _themeMode == ThemeMode.light ? Brightness.dark : Brightness.light,
+        systemNavigationBarColor:
+            _themeMode == ThemeMode.light ? Colors.white : Colors.black,
+        systemNavigationBarIconBrightness:
+            _themeMode == ThemeMode.light ? Brightness.dark : Brightness.light,
+      ),
+    );
 
     deviceId = await _getDeviceId();
   }

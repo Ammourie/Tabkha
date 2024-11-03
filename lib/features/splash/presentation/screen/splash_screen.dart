@@ -21,13 +21,14 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   final splashCubit = SplashCubit();
-  bool canGo = false;
+  // TODO: This must be false if there is init.
+  bool canGo = true;
   VersionEntity? versionInfo;
 
   @override
   void initState() {
     super.initState();
-    splashCubit.getSplash();
+    // splashCubit.getSplash();
   }
 
   @override

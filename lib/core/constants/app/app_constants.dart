@@ -45,6 +45,7 @@ class AppConstants {
   static const LOGIN_BACKGROUND = "assets/png/login_background.jpg";
   static const REGISTER_BACKGROUND = "assets/png/register_background.png";
   static const APP_LOGO = "assets/images/png/app_logo.png";
+  static const APP_LOGO_DARK = "assets/images/png/app_logo_dark.png";
   static const APP_FLUTTER_MARKER = "assets/images/png/flutter_marker.png";
   static const APP_USER_MARKER = "assets/images/png/user_marker.png";
 

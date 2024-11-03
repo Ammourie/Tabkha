@@ -77,7 +77,7 @@ class _AppState extends State<App> {
                               getIt<NavigationRoute>().generateRoute,
                           initialRoute: "/",
 
-                          navigatorObservers: [Statusbarz.instance.observer],
+                          // navigatorObservers: [Statusbarz.instance.observer],
 
                           /// Setup app localization
                           supportedLocales: S.delegate.supportedLocales,

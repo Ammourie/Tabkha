@@ -18,12 +18,12 @@ class AppSettings {
   static const enableNotification = false;
   static const enableBranchIO = false;
 
-  // App Colors
-  static const Color PRIMARY_COLOR_LIGHT = Colors.blue;
-  static const Color ACCENT_COLOR_LIGHT = Colors.black;
+  // App Colors`
+  static const Color PRIMARY_COLOR_LIGHT = Color(0xff1adb44);
+  static const Color ACCENT_COLOR_LIGHT = Color(0xff147b2f);
 
-  static const Color PRIMARY_COLOR_DARK = Colors.blue;
-  static const Color ACCENT_COLOR_DARK = Colors.black;
+  static const Color PRIMARY_COLOR_DARK = Color(0xff1adb44);
+  static const Color ACCENT_COLOR_DARK = Color(0xff7effa1);
 
   static final List<TextInputFormatter> PHONE_FIELD_FORMATTERS = [
     FilteringTextInputFormatter.allow(RegExp(r'^[0-9-]{1,12}')),

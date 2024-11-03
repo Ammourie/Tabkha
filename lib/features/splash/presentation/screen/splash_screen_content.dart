@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:meal_mate/core/common/app_config.dart';
+import 'package:meal_mate/core/ui/widgets/custom_image.dart';
 
 import '../../../../core/constants/app/app_constants.dart';
 
@@ -37,10 +39,12 @@ class _SplashScreenContentState extends State<SplashScreenContent> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            AppConstants.APP_LOGO,
-            width: 150,
-            height: 150,
+          CustomImage.asset(
+            AppConfig().themeMode == ThemeMode.light
+                ? AppConstants.APP_LOGO
+                : AppConstants.APP_LOGO_DARK,
+            width: 1.sw,
+            height: 1.sw,
           ),
           32.verticalSpace,
           const CircularProgressIndicator(strokeWidth: 2.5),
