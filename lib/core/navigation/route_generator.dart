@@ -27,8 +27,9 @@ class NavigationRoute {
     switch (settings.name) {
       case AppMainScreen.routeName:
         return _getRoute<AppMainScreenParam>(
-            settings: settings,
-            createScreen: (param) => AppMainScreen(param: param));
+          settings: settings,
+          createScreen: (param) => AppMainScreen(param: param),
+        );
       case LoginScreen.routeName:
         return _getRoute<LoginScreenParam>(
             settings: settings,
@@ -75,7 +76,7 @@ class NavigationRoute {
     required BaseScreen createScreen(
       ParamType param,
     ),
-    RouteType type = RouteType.FADE,
+    RouteType type = RouteType.SWIPABLE,
   }) {
     try {
       final args = settings.arguments;

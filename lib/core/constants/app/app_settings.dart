@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../common/text_formatters/iq_number_formatter.dart';

@@ -9,11 +9,7 @@ ThemeData _getLightTheme() {
       primary: AppColors.primaryColorLight,
       secondary: AppColors.accentColorLight,
     ),
-    fontFamily: LanguageUtils.isLTR()
-        ? GoogleFonts.poppins().fontFamily
-        : AppConfig().appLanguage.toString() == AppConstants.LANG_AR
-            ? GoogleFonts.cairo().fontFamily
-            : GoogleFonts.notoNaskhArabic().fontFamily,
+    fontFamily: 'Tajawal',
     textTheme: TextTheme(
       displayLarge: TextThemeStyles.displayLarge,
       displayMedium: TextThemeStyles.displayMedium,

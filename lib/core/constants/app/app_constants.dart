@@ -46,8 +46,10 @@ class AppConstants {
   static const REGISTER_BACKGROUND = "assets/png/register_background.png";
   static const APP_LOGO = "assets/images/png/app_logo.png";
   static const APP_LOGO_DARK = "assets/images/png/app_logo_dark.png";
-  static const APP_FLUTTER_MARKER = "assets/images/png/flutter_marker.png";
+  static const APP_FLUTTER_MARKER = "assets/images/ppng/flutter_marker.png";
   static const APP_USER_MARKER = "assets/images/png/user_marker.png";
+  static const SPLASH_BACKGROUND_LIGHT = "assets/images/png/splash_light.png";
+  static const SPLASH_BACKGROUND_DARK = "assets/images/png/splash_dark.png";
 
   /// Svg
   static const SVG_IMAGE_PLACEHOLDER =

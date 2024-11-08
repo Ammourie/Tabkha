@@ -81,7 +81,7 @@ class LocalStorage {
   /// Get APP Theme Mode
   static ThemeMode get getThemeMode {
     int? token = _sp.getInt(SharedPreferenceKeys.KEY_APP_THEME);
-    if (token == null) return ThemeMode.light;
+    if (token == null) return ThemeMode.dark;
     return ThemeMode.values[token];
   }
 }
