@@ -1,4 +1,4 @@
-import 'package:background_fetch/background_fetch.dart';
+// import 'package:background_fetch/background_fetch.dart';
 
 /// **Note**: When create a background task you must to add it to task list in `background_tasks_manager.dart`
 /// ## Examples
@@ -33,9 +33,9 @@ import 'package:background_fetch/background_fetch.dart';
 /// }
 /// ```
 ///
-abstract class BackgroundTask {
-  BackgroundTask();
+// abstract class BackgroundTask {
+//   BackgroundTask();
 
-  TaskConfig get config;
-  void execute(bool isKilled);
-}
+//   TaskConfig get config;
+//   void execute(bool isKilled);
+// }

@@ -6,7 +6,7 @@ class AppConstants {
   AppConstants._();
 
   // TODO: Add the name of the app
-  static const TITLE_APP_NAME = '';
+  static const TITLE_APP_NAME = 'طبخة';
   static final screenPadding = 20.w;
   static final COUNTRY_CODE = "+964";
 
@@ -50,7 +50,7 @@ class AppConstants {
   static const APP_USER_MARKER = "assets/images/png/user_marker.png";
   static const SPLASH_BACKGROUND_LIGHT = "assets/images/png/splash_light.png";
   static const SPLASH_BACKGROUND_DARK = "assets/images/png/splash_dark.png";
-
+  static const HOME_BACKGROUND = "assets/images/jpg/home_background.jpg";
   /// Svg
   static const SVG_IMAGE_PLACEHOLDER =
       'assets/images/svg/image_placeholder.svg';

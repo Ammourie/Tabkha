@@ -86,7 +86,7 @@ Future<void> _initAppConfigs() async {
       await FireBaseMessagingWrapper().deleteFirebaseToken();
   }
 
-  await BackgroundTasksManager.init();
+  // await BackgroundTasksManager.init();
 }
 
 Future<void> _initAppRotation() async {

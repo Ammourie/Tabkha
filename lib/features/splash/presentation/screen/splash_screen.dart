@@ -103,7 +103,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //   arguments: LoginScreenParam(),
     // );
 
-    Nav.to(
+    Nav.off(
       AppMainScreen.routeName,
       arguments: AppMainScreenParam(),
     );

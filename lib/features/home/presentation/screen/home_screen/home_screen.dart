@@ -7,7 +7,6 @@ import '../../../../../core/ui/screens/base_screen.dart';
 import '../../state_m/cubit/home_cubit.dart';
 import '../../state_m/provider/home_screen_notifier.dart';
 import 'home_screen_mobile.dart';
-import 'home_screen_tablet.dart';
 
 class HomeScreenParam {}
 
@@ -59,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             child: ScreenTypeLayout.builder(
               mobile: (_) => const HomeScreenMobile(),
-              tablet: (_) => const HomeScreenTablet(),
+              tablet: (_) => const Center(child: Text('No tablet layout available')),
             ),
           ),
         );

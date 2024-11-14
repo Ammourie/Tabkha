@@ -1,31 +1,49 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../../core/constants/app/app_constants.dart';
+import '../../../../../core/ui/widgets/my_widgets/dialogs/tabkha_custom_dialog.dart';
+import '../../../../../core/ui/widgets/my_widgets/dialogs/tabkha_search_dialog.dart';
+import '../../../../../core/ui/widgets/my_widgets/tabkha_icon_button.dart';
 import '../../state_m/provider/home_screen_notifier.dart';
 
-class HomeScreenMobile extends StatelessWidget {
+class HomeScreenMobile extends StatefulWidget {
   const HomeScreenMobile({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreenMobile> createState() => _HomeScreenMobileState();
+}
+
+class _HomeScreenMobileState extends State<HomeScreenMobile> {
+  late HomeScreenNotifier provider;
+  @override
+  void initState() {
+    super.initState();
+    provider = context.read<HomeScreenNotifier>();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Theme(
-        data: Theme.of(context),
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Home'),
-          ),
-          drawer: _buildDrawer(context),
-          body: const Center(
-            child: Text('Home Screen'),
+    return Scaffold(
+      drawer: _buildDrawer(),
+      body: SafeArea(
+        child: Container(
+          width: 1.sw,
+          height: 1.sh,
+          padding: EdgeInsets.all(AppConstants.screenPadding),
+          child: Column(
+            children: [
+              _appBar(context),
+            ],
           ),
         ),
       ),
     );
   }
 
-  Widget _buildDrawer(BuildContext context) {
+  Widget _buildDrawer() {
     return SafeArea(
       child: Drawer(
         child: SingleChildScrollView(
@@ -34,17 +52,16 @@ class HomeScreenMobile extends StatelessWidget {
               Container(
                 width: double.infinity,
                 color: Theme.of(context).colorScheme.primary,
-                child: DrawerHeader(
+                child: const DrawerHeader(
                   child: Align(
                     alignment: AlignmentDirectional.topEnd,
-                    child: _themeSwitcher(context),
+                    child: Text(AppConstants.TITLE_APP_NAME),
                   ),
                 ),
               ),
               ListTile(
                 title: const Text('Logout'),
-                onTap: () =>
-                    provider(context, listen: false).onLogoutTap(context),
+                onTap: () => provider.onLogoutTap(context),
                 trailing: const Icon(Icons.logout),
               ),
             ],
@@ -54,21 +71,36 @@ class HomeScreenMobile extends StatelessWidget {
     );
   }
 
-  Widget _themeSwitcher(BuildContext context) {
-    return ThemeSwitcher(
-      builder: (context) {
-        return IconButton(
-          icon: Icon(
-            provider(context).getThemeIcon(context),
+  Padding _appBar(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(AppConstants.screenPadding),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Builder(
+            builder: (BuildContext context) {
+              return TabkhaIconButton(
+                iconData: EvaIcons.menu2,
+                width: 100.sp,
+                height: 100.sp,
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            },
           ),
-          onPressed: () {
-            provider(context, listen: false).onThemeSwitcherTap(context);
-          },
-        );
-      },
+          TabkhaIconButton(
+            iconData: EvaIcons.search,
+            width: 100.sp,
+            height: 100.sp,
+            onPressed: () {
+              showTabkhaCustomDialog(
+                child: const TabkhaSearchDialog(),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
-
-  HomeScreenNotifier provider(BuildContext context, {bool listen = true}) =>
-      Provider.of<HomeScreenNotifier>(context, listen: listen);
 }

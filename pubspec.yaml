@@ -130,7 +130,9 @@ dependencies:
   # # Flutter Plugin for create deep link using Brach SDK (https://branch.io).
   # flutter_branch_sdk: 8.1.0
   # Periodic callbacks in the background for both iOS and Android. Includes Android Headless implementation.
-  background_fetch: 1.3.5
+  # background_fetch: 1.3.5
+  # Eva Icons
+  eva_icons_flutter: 3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -161,6 +163,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/png/
+    - assets/images/jpg/
     - assets/images/png/error/
     - assets/images/svg/
     - assets/anim/lottie/
@@ -188,7 +191,6 @@ flutter:
           weight: 200
         - asset: assets/fonts/Tajawal/Tajawal-Light.ttf
           weight: 300
-
 
   # example:
   # fonts:
